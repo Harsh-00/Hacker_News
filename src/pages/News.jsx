@@ -46,7 +46,7 @@ const News = () => {
 				<div className="w-11/12 mx-auto pt-10 bg-[#F5F7F8] p-8">
 					<p className="text-3xl">{data.title}</p>
 
-					<div className="mt-2 opacity-80">
+					<div className="mt-2.5 opacity-80">
 						<span>{`${data.points} Points | By ${data.author} | ${final_Date} || `}</span>
 						<span className="text-blue-500 underline">
 							<a className="hover:opacity-70" href={data.url}>

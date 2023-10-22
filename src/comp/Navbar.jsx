@@ -5,17 +5,17 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
 	const navi = useNavigate();
 	return (
-		<div className="bg-[#687EFF] h-14 flex py-1 gap justify-between">
+		<div className="bg-[#6720E9] h-16 flex py-1 gap text-white justify-between">
 			<img
 				src={logo2}
 				alt="logo"
-				className="w-32 pl-3 pt-1 mix-blend-multiply cursor-pointer"
+				className="w-32 pl-3  cursor-pointer"
 				onClick={() => navi("/")}
 			></img>
 
 			<div className="invisible md:visible">
 				<div
-					className="w-72 text-lg mt-3.5 hover:underline cursor-pointer font-semibold  "
+					className="w-72 text-xl mt-4 hover:underline cursor-pointer font-semibold  "
 					onClick={() => navi("/")}
 				>
 					Home
