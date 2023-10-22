@@ -1,27 +1,34 @@
 import React from "react";
+import { FcSearch } from "react-icons/fc";
 
 const SearchBox = ({ setQuery }) => {
 	var tmp;
-	function setInput(event) {
+	function setInputHandler(event) {
 		tmp = event.target.value;
 	}
 
-	function setValue() {
+	function setValueHandler() {
 		// console.log(tmp);
 		setQuery(tmp);
 	}
 
 	return (
-		<div className="mt-10 flex justify-center items-baseline gap-4">
+		<div className="pt-10 flex justify-center gap-4">
 			<input
 				type="text"
 				id="first"
-				onChange={setInput}
+				onChange={setInputHandler}
+				onKeyDown={(ev) => (ev.key === "Enter" ? setQuery(tmp) : 1)}
 				value={tmp}
 				placeholder="Enter Input"
 				className="border-2 rounded-lg w-[40%] px-2 py-1"
 			></input>
-			<button onClick={setValue} className="border-2 bg-red-200 rounded-2xl px-3 py-1">Search</button>
+			<button
+				onClick={setValueHandler}
+				className="border-2 rounded-2xl px-2 py-1.5 hover:bg-gray-100"
+			>
+				<FcSearch className="text-xl "></FcSearch>
+			</button>
 		</div>
 	);
 };

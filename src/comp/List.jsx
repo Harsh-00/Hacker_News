@@ -5,7 +5,7 @@ const List = ({ info }) => {
 	const hit = info.hits;
 	console.log(hit);
 	return (
-		<div className="mt-10 flex flex-col gap-1.5">
+		<div className="my-10 flex flex-col gap-2">
 			{hit?.map((ele) => (
 				<Item {...ele} key={ele.objectID}></Item>
 			))}

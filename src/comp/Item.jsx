@@ -7,7 +7,7 @@ const Item = (props) => {
 		navi(`/${props.objectID}`);
 	}
 	return (
-		<div className="border-2 bg-gray-300 rounded-lg flex justify-between p-2 flex-col sm:flex-row">
+		<div className="border-2 bg-gray-300 rounded-lg flex justify-between p-2 flex-col sm:flex-row shadow-lg">
 			<p
 				className="hover:underline hover:opacity-60 cursor-pointer"
 				onClick={ExpandHandler}
