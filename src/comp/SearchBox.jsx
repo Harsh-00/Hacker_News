@@ -13,19 +13,20 @@ const SearchBox = ({ setQuery }) => {
 	}
 
 	return (
-		<div className="pt-10 flex justify-center gap-4">
+		<div className="pt-28 flex justify-center gap-4">
 			<input
 				type="text"
 				id="first"
 				onChange={setInputHandler}
-				onKeyDown={(ev) => (ev.key === "Enter" ? setQuery(tmp) : 1)}
-				value={tmp}
-				placeholder="Enter Input"
-				className="border-2 rounded-lg w-[40%] px-2 py-1"
+				onKeyDown={(ev) =>
+					ev.key === "Enter" ? setValueHandler() : null
+				}
+				placeholder="Enter Search Input"
+				className="border-2 rounded-lg w-[45%] px-2 py-1.5"
 			></input>
 			<button
 				onClick={setValueHandler}
-				className="border-2 rounded-2xl px-2 py-1.5 hover:bg-gray-100"
+				className="border-2 rounded-full px-2.5 py-1.5 hover:bg-gray-100"
 			>
 				<FcSearch className="text-xl "></FcSearch>
 			</button>

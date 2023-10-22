@@ -6,8 +6,12 @@ import CallFailed from "../comp/CallFailed";
 import Loader from "../comp/Loader";
 
 const Home = () => {
+	//Store Search Query
 	const [srch, setSrch] = useState("");
+
+	//Store API call Data
 	const [data, setData] = useState("");
+
 	const [load, setLoad] = useState(false);
 	const [failed, setFailed] = useState(false);
 

@@ -5,14 +5,18 @@ import CallFailed from "../comp/CallFailed";
 import Loader from "../comp/Loader";
 
 const News = () => {
+	//to get ObjectID from url
 	const loc = useLocation();
 	const newsID = loc.pathname.split("/").at(-1);
+
+	//store API call data
 	const [data, setData] = useState("");
+
 	const [load, setLoad] = useState(false);
 	const [failed, setFailed] = useState(false);
 
-	const d = new Date(data.created_at);
-	const final_Date = d.toLocaleDateString("en-us", {
+	//Date Conversion
+	const final_Date = new Date(data.created_at).toLocaleDateString("en-us", {
 		year: "numeric",
 		month: "short",
 		day: "numeric",
@@ -43,7 +47,7 @@ const News = () => {
 			) : load ? (
 				<Loader />
 			) : (
-				<div className="w-11/12 mx-auto pt-10 bg-[#F5F7F8] p-8">
+				<div className="w-11/12 mx-auto pt-28 bg-[#F5F7F8] p-8">
 					<p className="text-3xl">{data.title}</p>
 
 					<div className="mt-2.5 opacity-80">
@@ -55,7 +59,13 @@ const News = () => {
 						</span>
 					</div>
 
-					<h3 className="mt-14 text-lg font-medium">Comments : </h3>
+					{/* Comment section  */}
+					<h3
+						className="mt-14 text-lg
+					font-medium"
+					>
+						Comments
+					</h3>
 					<Comments Data={data} />
 				</div>
 			)}
