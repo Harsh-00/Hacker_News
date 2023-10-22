@@ -17,6 +17,7 @@ const Home = () => {
 
 	console.log(srch);
 	async function APIcall(srch) {
+		if (!srch) return;
 		try {
 			setLoad(true);
 			const url = " http://hn.algolia.com/api/v1/search?query=" + srch;
